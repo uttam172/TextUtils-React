@@ -2,28 +2,14 @@ import React, { useState } from 'react'
 
 export default function About(props) {
 
-    const [myStyle, setMyStyle] = useState({
-        color: 'black',
-        backgroundColor: 'white'
-    })
+    // const [myStyle, setMyStyle] = useState({
+    //     color: 'black',
+    //     backgroundColor: 'white'
+    // })
 
-    const [btnText, setBtnText] = useState("Enable Dark mode")
-
-    const toggleStyle = () => {
-        if (myStyle.color === 'black') {
-            setMyStyle({
-                color: 'white',
-                backgroundColor: 'black'
-            })
-            setBtnText("Enable Light mode")
-        }
-        else {
-            setMyStyle({
-                color: 'black',
-                backgroundColor: 'white'
-            })
-            setBtnText("Enable Dark mode")
-        }
+    let myStyle = {
+        color: props.mode === 'dark'? 'white' : 'black',
+        backgroundColor: props.mode === 'dark'? 'black' : 'white'
     }
 
     return (
@@ -33,36 +19,33 @@ export default function About(props) {
                 <div className="accordion-item">
                     <h2 className="accordion-header">
                         <button className="accordion-button collapsed" style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                            Accordion Item #1
+                            <strong>Analyze Your Text</strong>
                         </button>
                     </h2>
                     <div id="flush-collapseOne" className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                        <div className="accordion-body" style={myStyle}>Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> className. This is the first item's accordion body. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero itaque nostrum et dicta optio exercitationem fuga quisquam incidunt, animi consectetur delectus, voluptates asperiores aliquam nihil, nam officia non corrupti accusantium. Vel suscipit deleniti possimus eaque, numquam maxime repudiandae dolor laudantium eveniet sed et soluta modi facere dolorum inventore voluptatibus quos, asperiores dolore similique dolorem.</div>
+                        <div className="accordion-body" style={myStyle}>TextUtils gives you a way to analyze your text quockly and efficiently. Be it word count, character count or get information of how much time takes to read this text.</div>
                     </div>
                 </div>
                 <div className="accordion-item">
                     <h2 className="accordion-header">
                         <button className="accordion-button collapsed" style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                            Accordion Item #2
+                            <strong>Free to use</strong>
                         </button>
                     </h2>
                     <div id="flush-collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                        <div className="accordion-body" style={myStyle}>Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> className. This is the second item's accordion body. Let's imagine this being filled with some actual content. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate unde voluptatum porro provident esse dolorem possimus veritatis quod culpa fugiat tenetur suscipit doloremque delectus dolor expedita error eos modi qui iure vitae ipsam, molestiae minus! Optio, quia unde. Unde magnam corrupti sit eligendi, voluptates non ipsum culpa, ullam at voluptatem asperiores harum obcaecati. Repellat.</div>
+                        <div className="accordion-body" style={myStyle}>TextUtils is a free character counter tool that instant character count & word count statistics for a given text. TextUtils reports the number of words and characters. Thus it is suitable for writing text with word / character limit.</div>
                     </div>
                 </div>
                 <div className="accordion-item">
                     <h2 className="accordion-header">
                         <button className="accordion-button collapsed" style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                            Accordion Item #3
+                            <strong>Browser Compatible</strong>
                         </button>
                     </h2>
                     <div id="flush-collapseThree" className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                        <div className="accordion-body" style={myStyle}>Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> className. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.lorem</div>
+                        <div className="accordion-body" style={myStyle}>This word counter software works in web browser such as Chrome, Firefox, Internet Explorer, Safari, Opera. It suits to count characters in facebook, blog, books, exel documents, pdf document, essays, etc. </div>
                     </div>
                 </div>
-            </div>
-            <div className="container my-3">
-                <button onClick={toggleStyle} type="button" className="btn btn-primary">{btnText}</button>
             </div>
         </div>
     )
